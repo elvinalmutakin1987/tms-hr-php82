@@ -36,6 +36,7 @@ return new class extends Migration
             $table->date('resign_date')->nullable();
             $table->text('resign_reason')->nullable();
             $table->string('tax_type', 30)->nullable();
+            $table->string('work_schedule', 20)->nullable(); //Office, Shift, Roster
             $table->timestamps();
         });
     }
