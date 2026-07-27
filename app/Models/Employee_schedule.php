@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Office_schedule extends Model
+class Employee_schedule extends Model
 {
     //
 }

@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('office_schedules', function (Blueprint $table) {
+        Schema::create('employee_schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->decimal('weekly_hours', 8, 2)->nullable();
+            $table->foreignId('employee_id')->nullable()->constrained('employees')->nullOnDelete();
+            $table->foreignId('schedule_id')->nullable()->constrained('schedules')->nullOnDelete();
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('office_schedules');
+        Schema::dropIfExists('employee_schedules');
     }
 };
